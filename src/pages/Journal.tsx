@@ -1,7 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-
 const Journal = () => {
   const featuredArticle = {
     title: "The Neuroscience of Re-membering: How Embodied Practices Reshape Neural Pathways",
@@ -59,13 +55,13 @@ const Journal = () => {
 
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: string } = {
-      "Research": "bg-primary text-primary-foreground",
-      "Storytelling": "bg-accent text-accent-foreground",
-      "Philosophy": "bg-secondary text-secondary-foreground",
-      "Community Voices": "bg-muted text-muted-foreground",
-      "Somatics": "bg-primary/80 text-primary-foreground"
+      "Research": "bg-blue-100 text-blue-800",
+      "Storytelling": "bg-amber-100 text-amber-800",
+      "Philosophy": "bg-purple-100 text-purple-800",
+      "Community Voices": "bg-green-100 text-green-800",
+      "Somatics": "bg-teal-100 text-teal-800"
     };
-    return colors[category] || "bg-muted text-muted-foreground";
+    return colors[category] || "bg-gray-100 text-gray-800";
   };
 
   return (
@@ -73,7 +69,7 @@ const Journal = () => {
       {/* Featured Article */}
       <section className="py-20 bg-gradient-earth">
         <div className="container mx-auto px-6">
-          <Card className="overflow-hidden shadow-warm max-w-6xl mx-auto">
+          <div className="modern-card overflow-hidden max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="h-64 lg:h-auto">
                 <img
@@ -82,24 +78,26 @@ const Journal = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
-                <Badge className={getCategoryColor(featuredArticle.category)} variant="secondary">
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${getCategoryColor(featuredArticle.category)}`}>
                   {featuredArticle.category}
-                </Badge>
-                <CardTitle className="font-serif text-2xl lg:text-3xl font-bold text-secondary mt-4 mb-4 leading-tight">
+                </span>
+                <h2 className="font-serif text-2xl lg:text-3xl font-bold text-gray-800 mt-4 mb-4 leading-tight">
                   {featuredArticle.title}
-                </CardTitle>
-                <p className="font-sans text-foreground/80 mb-6 leading-relaxed">
+                </h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {featuredArticle.excerpt}
                 </p>
-                <div className="flex items-center justify-between text-sm text-foreground/60 mb-6">
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
                   <span>{featuredArticle.date}</span>
                   <span>{featuredArticle.readTime}</span>
                 </div>
-                <Button variant="default">Read Full Article</Button>
-              </CardContent>
+                <button className="px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors">
+                  Read Full Article
+                </button>
+              </div>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
 
@@ -108,71 +106,71 @@ const Journal = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
             <div>
-              <h1 className="font-serif text-3xl md:text-4xl font-bold text-secondary mb-4">
+              <h1 className="font-serif text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 The Journal
               </h1>
-              <p className="font-sans text-lg text-foreground/80 max-w-2xl">
+              <p className="text-lg text-gray-600 max-w-2xl">
                 Research, reflections, and stories from the intersection of academic inquiry and embodied wisdom.
               </p>
             </div>
             <div className="flex flex-wrap gap-2 mt-6 lg:mt-0">
-              <Button variant="outline" size="sm">All</Button>
-              <Button variant="ghost" size="sm">Research</Button>
-              <Button variant="ghost" size="sm">Storytelling</Button>
-              <Button variant="ghost" size="sm">Philosophy</Button>
-              <Button variant="ghost" size="sm">Somatics</Button>
-              <Button variant="ghost" size="sm">Community</Button>
+              <button className="px-4 py-2 bg-amber-600 text-white rounded-lg">All</button>
+              <button className="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-lg">Research</button>
+              <button className="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-lg">Storytelling</button>
+              <button className="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-lg">Philosophy</button>
+              <button className="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-lg">Somatics</button>
+              <button className="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-lg">Community</button>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
-              <Card key={index} className="shadow-soft hover:shadow-warm transition-all duration-300 group">
-                <CardHeader className="pb-4">
-                  <Badge className={getCategoryColor(article.category)} variant="secondary">
+              <div key={index} className="modern-card group cursor-pointer">
+                <div className="p-6">
+                  <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${getCategoryColor(article.category)}`}>
                     {article.category}
-                  </Badge>
-                  <CardTitle className="font-serif text-xl font-bold text-secondary group-hover:text-primary transition-colors leading-tight">
+                  </span>
+                  <h3 className="font-serif text-xl font-bold text-gray-800 group-hover:text-amber-600 transition-colors leading-tight mt-4 mb-3">
                     {article.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-sans text-foreground/80 mb-4 leading-relaxed">
+                  </h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
                     {article.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-foreground/60">
+                  <div className="flex items-center justify-between text-sm text-gray-500">
                     <span>{article.date}</span>
                     <span>{article.readTime}</span>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
+            <button className="px-6 py-3 border-2 border-gray-800 text-gray-800 rounded-lg hover:bg-gray-800 hover:text-white transition-all">
               Load More Articles
-            </Button>
+            </button>
           </div>
         </div>
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-secondary text-secondary-foreground">
+      <section className="py-20 bg-gray-800 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl font-bold mb-4">
             Never miss a story
           </h2>
-          <p className="font-sans text-lg text-secondary-foreground/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Subscribe to receive our latest research, reflections, and community stories directly in your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 px-4 py-2 rounded-lg bg-secondary-foreground/10 border border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/60 focus:outline-none focus:ring-2 focus:ring-accent"
+              className="flex-1 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"
             />
-            <Button variant="subtle">Subscribe</Button>
+            <button className="px-6 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors">
+              Subscribe
+            </button>
           </div>
         </div>
       </section>

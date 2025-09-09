@@ -1,15 +1,13 @@
-import { Card, CardContent } from "@/components/ui/card";
-
 const About = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-earth">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-secondary mb-6">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             About The Re-membering Collective
           </h1>
-          <p className="font-sans text-lg text-foreground/80 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Our work emerges from the understanding that healing is not about fixing what's broken, 
             but about remembering what was never lost—our inherent wholeness and connection.
           </p>
@@ -19,9 +17,9 @@ const About = () => {
       {/* Philosophy Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto prose prose-lg">
-            <h2 className="font-serif text-3xl font-bold text-secondary mb-8">Our Philosophy</h2>
-            <div className="font-sans text-foreground/80 space-y-6 leading-relaxed">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl font-bold text-gray-800 mb-8">Our Philosophy</h2>
+            <div className="text-gray-700 space-y-6 leading-relaxed">
               <p>
                 The word "re-member" invites us to consider healing not as a linear process of repair, 
                 but as a practice of remembering—bringing back together the parts of ourselves that 
@@ -45,46 +43,40 @@ const About = () => {
       {/* Pillars Section */}
       <section className="py-20 bg-gradient-earth">
         <div className="container mx-auto px-6">
-          <h2 className="font-serif text-3xl font-bold text-secondary text-center mb-12">
+          <h2 className="font-serif text-3xl font-bold text-gray-800 text-center mb-12">
             Our work sits at the intersection of:
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="shadow-soft">
-              <CardContent className="p-8 text-center">
-                <h3 className="font-serif text-xl font-bold text-primary mb-4">Health</h3>
-                <p className="font-sans text-foreground/80">
-                  Integrating functional medicine, somatic practices, and nervous system regulation 
-                  to support whole-person wellbeing.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="shadow-soft">
-              <CardContent className="p-8 text-center">
-                <h3 className="font-serif text-xl font-bold text-primary mb-4">Art</h3>
-                <p className="font-sans text-foreground/80">
-                  Honoring creativity, storytelling, and expressive practices as essential pathways 
-                  to healing and self-discovery.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="shadow-soft">
-              <CardContent className="p-8 text-center">
-                <h3 className="font-serif text-xl font-bold text-primary mb-4">Spirituality</h3>
-                <p className="font-sans text-foreground/80">
-                  Exploring the profound questions of meaning, connection, and purpose that guide 
-                  us toward our truest expression.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="modern-card p-8 text-center">
+              <h3 className="font-serif text-xl font-bold text-amber-600 mb-4">Health</h3>
+              <p className="text-gray-600">
+                Integrating functional medicine, somatic practices, and nervous system regulation 
+                to support whole-person wellbeing.
+              </p>
+            </div>
+            <div className="modern-card p-8 text-center">
+              <h3 className="font-serif text-xl font-bold text-amber-600 mb-4">Art</h3>
+              <p className="text-gray-600">
+                Honoring creativity, storytelling, and expressive practices as essential pathways 
+                to healing and self-discovery.
+              </p>
+            </div>
+            <div className="modern-card p-8 text-center">
+              <h3 className="font-serif text-xl font-bold text-amber-600 mb-4">Spirituality</h3>
+              <p className="text-gray-600">
+                Exploring the profound questions of meaning, connection, and purpose that guide 
+                us toward our truest expression.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Founders Section - Placeholder for detailed bios */}
+      {/* Founders Section */}
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl font-bold text-secondary mb-8">The Founders</h2>
-          <p className="font-sans text-lg text-foreground/80 max-w-3xl mx-auto">
+          <h2 className="font-serif text-3xl font-bold text-gray-800 mb-8">The Founders</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Detailed founder biographies and their unique journeys into this work will be featured here, 
             including their academic backgrounds, personal healing journeys, and vision for the collective.
           </p>

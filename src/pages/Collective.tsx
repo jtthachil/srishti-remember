@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-
 const Collective = () => {
   const testimonials = [
     {
@@ -28,10 +25,10 @@ const Collective = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-earth">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-secondary mb-6">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             More than a service. A growing community.
           </h1>
-          <p className="font-sans text-lg text-foreground/80 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We believe healing happens in relationship. Our collective is a space where researchers, 
             practitioners, creators, and seekers come together to explore what's possible when we 
             remember our wholeness—together.
@@ -42,21 +39,21 @@ const Collective = () => {
       {/* Community Gallery Placeholder */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="font-serif text-3xl font-bold text-secondary text-center mb-12">
+          <h2 className="font-serif text-3xl font-bold text-gray-800 text-center mb-12">
             Moments from Our Community
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="h-64 bg-gradient-primary rounded-lg opacity-80 flex items-center justify-center">
-              <span className="text-white font-sans">Workshop Gallery</span>
+            <div className="h-64 bg-gradient-to-br from-purple-400 to-indigo-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-semibold">Workshop Gallery</span>
             </div>
-            <div className="h-64 bg-secondary rounded-lg opacity-80 flex items-center justify-center">
-              <span className="text-white font-sans">Retreat Photos</span>
+            <div className="h-64 bg-gradient-to-br from-teal-400 to-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-semibold">Retreat Photos</span>
             </div>
-            <div className="h-64 bg-accent rounded-lg opacity-80 flex items-center justify-center">
-              <span className="text-white font-sans">Community Events</span>
+            <div className="h-64 bg-gradient-to-br from-orange-400 to-pink-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-semibold">Community Events</span>
             </div>
           </div>
-          <p className="text-center font-sans text-foreground/60">
+          <p className="text-center text-gray-500">
             Authentic moments of connection, learning, and transformation from our gatherings
           </p>
         </div>
@@ -65,33 +62,31 @@ const Collective = () => {
       {/* Voices from the Collective */}
       <section className="py-20 bg-gradient-earth">
         <div className="container mx-auto px-6">
-          <h2 className="font-serif text-3xl font-bold text-secondary text-center mb-12">
+          <h2 className="font-serif text-3xl font-bold text-gray-800 text-center mb-12">
             Voices from the Collective
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="shadow-soft">
-                <CardContent className="p-8">
-                  <blockquote className="font-sans text-foreground/80 italic mb-6 leading-relaxed">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <div className="font-sans font-semibold text-secondary">
-                        {testimonial.name}
-                      </div>
-                      <div className="font-sans text-sm text-foreground/60">
-                        {testimonial.role}
-                      </div>
+              <div key={index} className="modern-card p-8">
+                <blockquote className="text-gray-600 italic mb-6 leading-relaxed">
+                  "{testimonial.quote}"
+                </blockquote>
+                <div className="flex items-center space-x-4">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className="font-semibold text-gray-800">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      {testimonial.role}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -100,89 +95,83 @@ const Collective = () => {
       {/* Upcoming Gatherings */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="font-serif text-3xl font-bold text-secondary text-center mb-12">
+          <h2 className="font-serif text-3xl font-bold text-gray-800 text-center mb-12">
             Upcoming Gatherings
           </h2>
           <div className="max-w-4xl mx-auto space-y-6">
-            <Card className="shadow-soft">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-secondary mb-2">
-                      Monthly Community Circle
-                    </h3>
-                    <p className="font-sans text-foreground/80 mb-2">
-                      A virtual gathering for connection, sharing, and collective inquiry
-                    </p>
-                    <p className="font-sans text-sm text-foreground/60">
-                      First Thursday of each month • 7:00 PM EST
-                    </p>
-                  </div>
-                  <Button variant="outline" className="mt-4 md:mt-0">
-                    Join Next Circle
-                  </Button>
+            <div className="modern-card p-8">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                  <h3 className="font-serif text-xl font-bold text-gray-800 mb-2">
+                    Monthly Community Circle
+                  </h3>
+                  <p className="text-gray-600 mb-2">
+                    A virtual gathering for connection, sharing, and collective inquiry
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    First Thursday of each month • 7:00 PM EST
+                  </p>
                 </div>
-              </CardContent>
-            </Card>
+                <button className="mt-4 md:mt-0 px-6 py-2 border-2 border-gray-800 text-gray-800 rounded-lg hover:bg-gray-800 hover:text-white transition-all">
+                  Join Next Circle
+                </button>
+              </div>
+            </div>
 
-            <Card className="shadow-soft">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-secondary mb-2">
-                      Spring Embodiment Workshop
-                    </h3>
-                    <p className="font-sans text-foreground/80 mb-2">
-                      A day-long exploration of seasonal transitions and nervous system support
-                    </p>
-                    <p className="font-sans text-sm text-foreground/60">
-                      March 21, 2024 • 10:00 AM - 4:00 PM • Local venue
-                    </p>
-                  </div>
-                  <Button variant="outline" className="mt-4 md:mt-0">
-                    Register
-                  </Button>
+            <div className="modern-card p-8">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                  <h3 className="font-serif text-xl font-bold text-gray-800 mb-2">
+                    Spring Embodiment Workshop
+                  </h3>
+                  <p className="text-gray-600 mb-2">
+                    A day-long exploration of seasonal transitions and nervous system support
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    March 21, 2024 • 10:00 AM - 4:00 PM • Local venue
+                  </p>
                 </div>
-              </CardContent>
-            </Card>
+                <button className="mt-4 md:mt-0 px-6 py-2 border-2 border-gray-800 text-gray-800 rounded-lg hover:bg-gray-800 hover:text-white transition-all">
+                  Register
+                </button>
+              </div>
+            </div>
 
-            <Card className="shadow-soft">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-secondary mb-2">
-                      Research & Practice Symposium
-                    </h3>
-                    <p className="font-sans text-foreground/80 mb-2">
-                      Annual gathering bridging academic inquiry and embodied practice
-                    </p>
-                    <p className="font-sans text-sm text-foreground/60">
-                      June 14-16, 2024 • Registration opens February 1st
-                    </p>
-                  </div>
-                  <Button variant="outline" className="mt-4 md:mt-0">
-                    Get Notified
-                  </Button>
+            <div className="modern-card p-8">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                  <h3 className="font-serif text-xl font-bold text-gray-800 mb-2">
+                    Research & Practice Symposium
+                  </h3>
+                  <p className="text-gray-600 mb-2">
+                    Annual gathering bridging academic inquiry and embodied practice
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    June 14-16, 2024 • Registration opens February 1st
+                  </p>
                 </div>
-              </CardContent>
-            </Card>
+                <button className="mt-4 md:mt-0 px-6 py-2 border-2 border-gray-800 text-gray-800 rounded-lg hover:bg-gray-800 hover:text-white transition-all">
+                  Get Notified
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Community CTA */}
-      <section className="py-20 bg-secondary text-secondary-foreground">
+      <section className="py-20 bg-gray-800 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl font-bold mb-6">
             Ready to join our community?
           </h2>
-          <p className="font-sans text-lg text-secondary-foreground/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Whether you're a researcher, practitioner, or simply curious about the intersection 
             of inquiry and embodied healing, there's a place for you here.
           </p>
-          <Button variant="subtle" size="lg">
+          <button className="px-8 py-4 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors">
             Explore Membership
-          </Button>
+          </button>
         </div>
       </section>
     </div>

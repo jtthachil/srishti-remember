@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { cn } from "@/lib/utils";
 
 const Header = () => {
   const location = useLocation();
@@ -13,12 +12,12 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-muted/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
       <div className="container mx-auto px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="font-serif text-xl font-bold text-secondary">
+          <Link to="/" className="flex items-center">
+            <div className="text-xl font-bold text-gray-800">
               The Re-membering Collective
             </div>
           </Link>
@@ -29,12 +28,11 @@ const Header = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={cn(
-                  "font-sans text-sm font-medium transition-colors hover:text-primary",
+                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
                   location.pathname === item.href
-                    ? "text-primary"
-                    : "text-foreground/80"
-                )}
+                    ? "text-blue-600"
+                    : "text-gray-600"
+                }`}
               >
                 {item.label}
               </Link>

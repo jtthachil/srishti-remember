@@ -1,102 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* The Re-membering Collective Design System
-   Guided by principles of being Embodied & Grounded, Intellectual & Authentic, Warm & Communal
-   All colors MUST be HSL.
-*/
+/* Modern Re-membering Collective Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-@layer base {
-  :root {
-    /* The Re-membering Collective Color Palette */
-    --primary: 15 53% 47%; /* Terracotta #B85C38 */
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 210 29% 24%; /* Deep Indigo #2C3E50 */
-    --secondary-foreground: 0 0% 100%;
-    
-    --accent: 41 47% 61%; /* Muted Gold #D8A25D */
-    --accent-foreground: 210 29% 24%;
-    
-    --background: 40 33% 95%; /* Parchment #F4F1EA */
-    --foreground: 208 7% 25%; /* Charcoal #343A40 */
-    
-    --card: 40 33% 95%;
-    --card-foreground: 208 7% 25%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 208 7% 25%;
-    
-    --muted: 0 0% 74%; /* Stone #BDBDBD */
-    --muted-foreground: 208 7% 25%;
-    
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --border: 0 0% 74%;
-    --input: 0 0% 100%;
-    --ring: 15 53% 47%;
-    
-    --radius: 0.75rem;
-    
-    /* Gradients for visual interest */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-earth: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.3));
-    
-    /* Shadows for depth */
-    --shadow-warm: 0 4px 20px hsl(var(--primary) / 0.1);
-    --shadow-soft: 0 2px 10px hsl(var(--muted) / 0.2);
-    
-    /* Transitions */
-    --transition-warm: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #ffffff;
+}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+/* Custom Gradients */
+.bg-gradient-healing {
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8f2f7 50%, #d6eaf8 100%);
+}
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+.bg-gradient-warm {
+  background: linear-gradient(135deg, #fef7f0 0%, #fdf2e9 50%, #fbeee6 100%);
+}
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+.bg-gradient-earth {
+  background: linear-gradient(135deg, #f8f6f0 0%, #f4f1ea 50%, #f0ede6 100%);
+}
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+/* Modern Card Styles */
+.modern-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+.modern-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+/* Animation Classes */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
 
-  body {
-    @apply bg-background text-foreground;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem !important;
   }
 }
